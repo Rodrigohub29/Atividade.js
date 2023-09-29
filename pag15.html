@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calcular() 
+        {
+            var v1 = parseInt(document.getElementById('n1').value);
+            var v2 = parseInt(document.getElementById('n2').value);
+            document.getElementById('resultado').innerHTML = (v1+v2);
+            try {
+                if (isNaN(v1) || isNaN(v2)) throw "valor invalido";
+            } catch (error) {
+                alert(error);
+            }
+
+        }
+    </script>
+    <form action="" method="post">
+    Valor 1: <input type="text" ID="n1" ><br><br>
+    Valor 2: <input type="text" ID="n2" onblur="calcular()"><br>
+        <input type="button" onclick="calcular()" value="Soma">
+    </form>
+    <h1 id="resultado"></h1>
+</body>
+
+</html>
